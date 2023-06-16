@@ -1,0 +1,29 @@
+package:
+  id: plasma-wayland-protocols
+  name: plasma-wayland-protocols
+  version: 1.6.0
+  kind: lib
+  description: |
+    plasma-wayland-protocols.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: qtbase
+    version: 5.15.3
+  - id: extra-cmake-modules
+    version: 5.90.0
+
+source:
+  kind: git
+  url: "https://github.com/deepin-community/plasma-wayland-protocols.git"
+  commit: 9095c8fe47c0128df3852d43395c60c5746a6364
+
+variables:
+  extra_args: |
+    -DBUILD_TESTING=OFF
+
+build:
+  kind: cmake
